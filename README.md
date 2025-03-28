@@ -21,7 +21,7 @@ A simple **Task Manager App** built with:
 ### **1. Clone the Repository**
 
 ```sh
-git clone https://github.com/your-username/task-manager.git
+git clone https://github.com/Sidspidy/task-manager.git
 cd task-manager
 ```
 
@@ -42,7 +42,7 @@ npm run dev  # Starts the frontend at http://localhost:5173 (or React default po
 ```sh
 cd backend
 npm install
-npm start  # Starts backend at http://localhost:5000
+npm start  # Starts backend at http://localhost:8000
 ```
 
 ### **Backend Environment Variables (`backend/.env`)**
@@ -50,9 +50,8 @@ npm start  # Starts backend at http://localhost:5000
 Create a `.env` file in the `backend/` folder and add:
 
 ```sh
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+
+ACCESS_TOKEN_SECRET=shadow_storm10
 ```
 
 ---
@@ -75,14 +74,17 @@ JWT_SECRET=your_secret_key
 
 ## 📌 API Endpoints (Backend)
 
-| Method | Endpoint             | Description          |
-| ------ | -------------------- | -------------------- |
-| POST   | `/api/auth/register` | Register a new user  |
-| POST   | `/api/auth/login`    | Login user & get JWT |
-| GET    | `/api/tasks`         | Get all tasks        |
-| POST   | `/api/tasks`         | Create a new task    |
-| PUT    | `/api/tasks/:id`     | Update a task        |
-| DELETE | `/api/tasks/:id`     | Delete a task        |
+| Method | Endpoint                     | Description                   |
+| ------ | ---------------------------- | ----------------------------- |
+| POST   | `/create-account`            | Register a new user           |
+| POST   | `/login`                     | Login user & get JWT          |
+| GET    | `/user`                      | Get user details              |
+| POST   | `/task/create`               | Create a new task             |
+| PUT    | `/task/edit/:taskId`         | Edit a task                   |
+| GET    | `/task/get`                  | Get all tasks                 |
+| DELETE | `/task/delete/:taskId`       | Delete a task                 |
+| PUT    | `/task/update-pin/:taskId`   | Pin/Unpin a task              |
+| GET    | `/search-tasks?query=<text>` | Search tasks by title/content |
 
 ---
 
